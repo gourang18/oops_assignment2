@@ -1,0 +1,92 @@
+Ans 1.Abstraction is used to hide the internal functionality of the function from the users. The users only interact with the basic implementation of the function, but inner working is hidden. In Python it is used to hide irrelevant implementation and data. For e.g.    from abc import ABC, abstractmethod   
+class Car(ABC):   
+    def mileage(self):   
+        pass  
+class Tesla(Car):   
+    def mileage(self):   
+        print("The mileage is 30kmph")   
+class Suzuki(Car):   
+    def mileage(self):   
+        print("The mileage is 25kmph ")   
+class Duster(Car):   
+     def mileage(self):   
+          print("The mileage is 24kmph ")   
+  
+class Renault(Car):   
+    def mileage(self):   
+            print("The mileage is 27kmph ")   
+t= Tesla ()   
+t.mileage()   
+r = Renault()   
+r.mileage()   
+s = Suzuki()   
+s.mileage()   
+d = Duster()   
+d.mileage()   
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Ans 2. i. Abstraction only shows only the useful data by providing the necessary details whereas encapsulation wraps code and data for necessary information.
+ii. Abstraction hides the irrelevant details found in the code, whereas Encapsulation helps developers to organize the entire code easily.
+For e.g.
+Encapsulation
+class car:
+    def __init__(self,year,company,model,speed):
+        
+        self.__year=year
+        self.__company=company
+        self.__model=model
+        self.__speed=speed
+     
+    def getspeed(self):
+        return self.__speed
+        
+    def setspeed(self,speed):
+        self.__speed=0 if speed<0 else speed
+
+c=car(2012,"maruti","ertiga",40)
+
+c.setspeed(50)
+c.getspeed()  //50
+
+
+ Abstraction
+from abc import ABC, abstractmethod   
+class Car(ABC):   
+    def mileage(self):   
+        pass  
+class Tesla(Car):   
+    def mileage(self):   
+        print("The mileage is 30kmph")   
+class Suzuki(Car):   
+    def mileage(self):   
+        print("The mileage is 25kmph ")   
+class Duster(Car):   
+     def mileage(self):   
+          print("The mileage is 24kmph ")   
+class Renault(Car):   
+    def mileage(self):   
+            print("The mileage is 27kmph ")   
+t= Tesla ()   
+t.mileage() //The mileage is 30kmph
+r = Renault()   
+r.mileage()   //The mileage is 27kmph
+s = Suzuki()   
+s.mileage() // The mileage is 25kmph
+d = Duster()   
+d.mileage()  // The mileage is 24kmph
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Ans 3. abc refers to abstract base class in python.The main goal of the abstract base class is to provide a standardized way to test whether an object adheres to a given specification. It can also prevent any attempt to instantiate a subclass that doesn’t override a particular method in the superclass. And finally, using an abstract class, a class can derive identity from another class without any object inheritance.
+----------------------------------------------------------------------------------------------------------------------------------------
+Ans 4.Data Abstraction in Python can be achieved through creating abstract classes and inheriting them later.Inheritance in OOP is a way through which one class inherits the attributes and methods of another class. The class whose properties and methods are inherited is known as the Parent class. And the class that inherits the properties from the parent class is the Child class/subclass.
+
+class parent_class:
+body of parent class
+
+class child_class( parent_class):
+body of child class
+----------------------------------------------------------------------------------------------------------------------------------------
+Ans 5.Abstract classes are not complete, as they may have some methods that are not defined. So we cannot create an instance or object of an abstract class in Python. If we try to instantiate the abstract class, it raises an error.
+
+If we try to crerate an object of an abstract class it will throw an error of cannot instantiate instance of an abstract class because in abstract class there are some 
